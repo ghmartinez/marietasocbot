@@ -1,7 +1,9 @@
 require 'telegram/bot'
+require 'telegram-bot-ruby'
 
-# Reemplaza 'YOUR_TOKEN' con el token que obtuviste del BotFather
-token = '6933978056:AAFEkWcfGKUBalDO7A3Lz6xOOCa57Gd5uu8'
+require 'dotenv'
+Dotenv.load
+token = ENV['TELEGRAM_TOKEN']
 
 Telegram::Bot::Client.run(token) do |bot|
   bot.listen do |message|
